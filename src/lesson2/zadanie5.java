@@ -64,7 +64,7 @@ public class zadanie5 {
         System.out.println("Введите координаты второго элемента (строка столбец): ");
         int k = scan.nextInt();
         int l = scan.nextInt();
-        equals(array[n][m], array[k][l]);
+        equals(array[n][m], array1[k][l]);
     }
 
     private static void equals(int i, int i1) {
