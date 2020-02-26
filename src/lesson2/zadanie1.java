@@ -12,8 +12,8 @@ public class zadanie1 {
             System.out.print(array[i] + ";");
         }
         System.out.println();
-        for (int z = array.length - 1; z >= 0; z--) {
-            System.out.print(array[z] + ";");
+        for ( int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i] + ";");
         }
 
     }
