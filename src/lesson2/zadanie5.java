@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class zadanie5 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int i, i1;
-        int j, j1;
+        int i;
+        int j;
         do {
             System.out.println("Введите кол-во строк первого массива :");
             while (!scan.hasNextInt()) {
@@ -23,51 +23,48 @@ public class zadanie5 {
             }
             j = scan.nextInt();
         } while (j <= 0);
+        int array1[][] = new int[i][j];
         do {
             System.out.println("Введите кол-во строк второго массива :");
             while (!scan.hasNextInt()) {
                 System.out.println("Введите кол-во строк второго массива :");
                 scan.next();
             }
-            i1 = scan.nextInt();
-        } while (i1 <= 0);
+            i = scan.nextInt();
+        } while (i <= 0);
         do {
             System.out.println("Введите кол-во столбцов второго массива :");
             while (!scan.hasNextInt()) {
                 System.out.println("Введите кол-во столбцов второго массива :");
                 scan.next();
             }
-            j1 = scan.nextInt();
-        } while (j1 <= 0);
-        int array[][] = new int[i][j];
-        int array1[][] = new int[i1][j1];
+            j = scan.nextInt();
+        } while (j <= 0);
+        int array2[][] = new int[i][j];
         Random random = new Random();
-        for (i = 0; i < array.length; i++) {
-            for (j = 0; j < array[i].length; j++) {
-                array[i][j] = random.nextInt(10);
-                System.out.print(array[i][j] + " ");
+        for (i = 0; i < array1.length; i++) {
+            for (j = 0; j < array1[i].length; j++) {
+                array1[i][j] = random.nextInt(10);
+                System.out.print(array1[i][j] + " ");
             }
             System.out.println();
         }
         System.out.println();
-        for (i1 = 0; i1 < array1.length; i1++) {
-            for (j1 = 0; j1 < array1[i1].length; j1++) {
-                array1[i1][j1] = random.nextInt(10);
-                System.out.print(array1[i1][j1] + " ");
+        for (i = 0; i < array2.length; i++) {
+            for (j = 0; j < array2[i].length; j++) {
+                array2[i][j] = random.nextInt(10);
+                System.out.print(array2[i][j] + " ");
             }
             System.out.println();
         }
-        System.out.println("Введите координаты первого элемента (строка столбец): ");
-        int n = scan.nextInt();
-        int m = scan.nextInt();
-        System.out.println("Введите координаты второго элемента (строка столбец): ");
-        int k = scan.nextInt();
-        int l = scan.nextInt();
-        equals(array[n][m], array1[k][l]);
+        System.out.println("Введите координаты сравниваемых элементов (строка столбец): ");
+         i = scan.nextInt();
+         j = scan.nextInt();
+        equals(array1,array2,i,j);
     }
 
-    private static void equals(int i, int i1) {
-        if (i == i1) {
+    private static void equals(int array1[][],int array2[][],int i, int j) {
+        if (array1[i][j] == array2[i][j]) {
             System.out.println("Элементы равны");
         } else {
             System.out.println("Элементы не равны");
