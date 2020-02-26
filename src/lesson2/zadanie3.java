@@ -32,7 +32,7 @@ public class zadanie3 {
             }
             averageValue+=array[i];
         }
-        averageValue=averageValue/5;
+        averageValue=averageValue/array.length;
         System.out.println();
         System.out.println("Максимальное значение= "+max+"; Минимальное значение= "+min);
         System.out.println("Среднее значение= "+averageValue);
