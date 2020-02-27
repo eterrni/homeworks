@@ -15,7 +15,7 @@ public class zadanie1 {
                 scan.next();
             }
             n = scan.nextInt();
-        } while (n <=0 || n>=3);
+        } while (n <= 0 || n >= 3);
         if (n == 1) {
             int seconds;
             do {
@@ -63,23 +63,25 @@ public class zadanie1 {
 
     static class Time {
         Time(int seconds) {
-            dataOutput(seconds);
+          String output = transferToHoursMinSec(seconds);
+            dataOutput(output);
         }
-
         Time(int sec, int min, int hours) {
-            int seconds = transferToSeconds(sec, min, hours);
-            dataOutput(seconds);
+            String output =transferToHoursMinSec(transferToSeconds(sec, min, hours));
+            dataOutput(output);
         }
-
-        static int transferToSeconds(int sec, int min, int hours) {
-            return sec + min * 60 + hours * 3600;
-        }
-
-        static void dataOutput(int seconds) {
+        static String transferToHoursMinSec(int seconds) {
             int hours = seconds / 3600;
             int min = (seconds - hours * 3600) / 60;
             int sec = (seconds - hours * 3600 - min * 60);
-            System.out.println(hours + ":" + min + ":" + sec);
+            String output=hours+":"+min+":"+sec;
+            return output;
+        }
+        static int transferToSeconds(int sec, int min, int hours) {
+            return sec+min*60+hours*3600;
+        }
+        static void dataOutput(String HourMinSec) {
+            System.out.println(HourMinSec);
         }
     }
 }
