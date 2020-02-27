@@ -15,7 +15,7 @@ public class zadanie1 {
                 scan.next();
             }
             n = scan.nextInt();
-        } while (n <=0);
+        } while (n <=0 || n>=3);
         if (n == 1) {
             int seconds;
             do {
