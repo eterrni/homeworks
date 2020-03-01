@@ -8,7 +8,7 @@ public class zadanie2 {
         int kolvo_50 = 0;
         int kolvo_100 = 0;
         Atm a1 = new Atm(kolvo_20, kolvo_50, kolvo_100);
-        a1.outputCash(130);
+        a1.outputCash(80);
         a1.input_20(10);
     }
 }
@@ -69,11 +69,14 @@ class Atm {
     public boolean outputCash(int sum) {
         if (sum <= 800 && sum >= 20 && sum != 30 && sum <= this.totalCash && sum % 10 == 0) {
             int[] nominal = {20, 50, 100};
-            int[] count = new int[nominal.length];
+            int[] count = new int[3];
             int index = 0;
 
             if (sum >= 100) {
-                if (sum % 100 == 10 || sum % 100 == 30) {
+                if ((sum % 100 == 10 || sum % 100 == 30 || sum % 100 == 70) && this.kolvo_50 == 0) {
+                    System.out.println("В банкомате недостаточно купюр для выдачи");
+                    return false;
+                } else if (sum % 100 == 10 || sum % 100 == 30) {
                     count[index] = (sum - 50) / nominal[index];
                     count[index + 1]++;
                     if (count[index] >= 5) {
@@ -97,7 +100,7 @@ class Atm {
                         index--;
                     }
                 }
-            } else {
+            } else if ((sum == 40 && this.kolvo_20 >= 2) || (sum == 60 && this.kolvo_20 >= 3) || (sum == 80 && this.kolvo_20 >= 4)) {
                 if (sum == 60 || sum == 80) {
                     count[index] = sum / nominal[index];
                 } else {
@@ -109,8 +112,11 @@ class Atm {
                     }
                 }
 
+            } else {
+                System.out.println("Операция не проведена");
+                return false;
             }
-            if(count[0]>this.kolvo_20 || count[1]>this.kolvo_50||count[2]>this.kolvo_100){
+            if (count[0] > this.kolvo_20 || count[1] > this.kolvo_50 || count[2] > this.kolvo_100) {
                 System.out.println("В банкомате недостаточно купюр для выдачи");
                 return false;
             } else {
@@ -118,7 +124,9 @@ class Atm {
                 for (int i = 0; i < count.length; i++) {
                     System.out.printf("Номинал в %d руб. = %d куп.\n", nominal[i], count[i]);
                 }
-            } return true;
-        } else return false;
+            }
+            return true;
+        } else System.out.println("Операция не проведена");
+        return false;
     }
 }
