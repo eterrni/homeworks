@@ -8,7 +8,8 @@ public class zadanie2 {
         int kolvo_50 = 0;
         int kolvo_100 = 0;
         Atm a1 = new Atm(kolvo_20, kolvo_50, kolvo_100);
-        a1.outputCash(790);
+        a1.outputCash(130);
+        a1.input_20(10);
     }
 }
 
@@ -66,7 +67,6 @@ class Atm {
     }
 
     public boolean outputCash(int sum) {
-        boolean flag=true;
         if (sum <= 800 && sum >= 20 && sum != 30 && sum <= this.totalCash && sum % 10 == 0) {
             int[] nominal = {20, 50, 100};
             int[] count = new int[nominal.length];
@@ -110,11 +110,15 @@ class Atm {
                 }
 
             }
+            if(count[0]>this.kolvo_20 || count[1]>this.kolvo_50||count[2]>this.kolvo_100){
+                System.out.println("В банкомате недостаточно купюр для выдачи");
+                return false;
+            } else {
 
-            for (int i = 0; i < count.length; i++) {
-                System.out.printf("Номинал в %d руб. = %d куп.\n", nominal[i], count[i]);
-            }
-            return flag;
-        } else return flag=false;
+                for (int i = 0; i < count.length; i++) {
+                    System.out.printf("Номинал в %d руб. = %d куп.\n", nominal[i], count[i]);
+                }
+            } return true;
+        } else return false;
     }
 }
