@@ -8,8 +8,7 @@ public class zadanie2 {
         int kolvo_50 = 0;
         int kolvo_100 = 0;
         Atm a1 = new Atm(kolvo_20, kolvo_50, kolvo_100);
-        a1.outputCash(80);
-        a1.input_20(10);
+        a1.outputCash(120);
     }
 }
 
