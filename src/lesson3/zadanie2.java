@@ -8,7 +8,7 @@ public class zadanie2 {
         int kolvo_50 = 0;
         int kolvo_100 = 0;
         Atm a1 = new Atm(kolvo_20, kolvo_50, kolvo_100);
-        a1.outputCash(120);
+        a1.outputCash(50);
     }
 }
 
@@ -55,6 +55,7 @@ class Atm {
         this.totalCash += input_20 * 20;
     }
 
+
     public void input_50(int input_50) {
         this.kolvo_50 += input_50;
         this.totalCash += input_50 * 50;
@@ -99,7 +100,7 @@ class Atm {
                         index--;
                     }
                 }
-            } else if ((sum == 40 && this.kolvo_20 >= 2) || (sum == 60 && this.kolvo_20 >= 3) || (sum == 80 && this.kolvo_20 >= 4)) {
+            } else if ((sum == 40 && this.kolvo_20 >= 2) || (sum == 60 && this.kolvo_20 >= 3) || (sum == 80 && this.kolvo_20 >= 4) || (sum<100)) {
                 if (sum == 60 || sum == 80) {
                     count[index] = sum / nominal[index];
                 } else {
@@ -129,3 +130,4 @@ class Atm {
         return false;
     }
 }
+
