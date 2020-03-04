@@ -8,7 +8,7 @@ public class zadanie2 {
         int kolvo_50 = 0;
         int kolvo_100 = 0;
         Atm a1 = new Atm(kolvo_20, kolvo_50, kolvo_100);
-        a1.outputCash(50);
+        a1.outputCash(130);
     }
 }
 
@@ -100,22 +100,16 @@ class Atm {
                         index--;
                     }
                 }
-            } else if ((sum == 40 && this.kolvo_20 >= 2) || (sum == 60 && this.kolvo_20 >= 3) || (sum == 80 && this.kolvo_20 >= 4) || (sum<100)) {
-                if (sum == 60 || sum == 80) {
-                    count[index] = sum / nominal[index];
-                } else {
-                    index = 1;
-                    while (index != -1) {
-                        count[index] = sum / nominal[index];
-                        sum %= nominal[index];
-                        index--;
-                    }
-                }
-
             } else {
-                System.out.println("Операция не проведена");
-                return false;
+                index = 1;
+                while (index != -1) {
+                    count[index] = sum / nominal[index];
+                    sum %= nominal[index];
+                    index--;
+                }
             }
+
+
             if (count[0] > this.kolvo_20 || count[1] > this.kolvo_50 || count[2] > this.kolvo_100) {
                 System.out.println("В банкомате недостаточно купюр для выдачи");
                 return false;
