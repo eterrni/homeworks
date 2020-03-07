@@ -6,6 +6,7 @@ private int count;
         super(name, health);
     }
 
+
     @Override
     protected int attackHero(Hero h) {
         if (this.health <= 400 && count==0) {  // у берсерка, если мало здоровья, он начинает бить сильнее

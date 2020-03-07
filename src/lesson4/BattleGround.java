@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class BattleGround {
     public static void main(String[] args) {
         int n;
+
         int e;
         Scanner scan = new Scanner(System.in);
         Hero hero_1 = new Warrior("Axe", 1100);

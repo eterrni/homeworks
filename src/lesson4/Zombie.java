@@ -13,6 +13,7 @@ public class Zombie extends Enemy {
         return damage;
     }
 
+
     @Override
     public void takeDamage(int damage) {
         this.health -= damage;

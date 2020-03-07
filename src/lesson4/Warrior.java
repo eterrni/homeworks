@@ -13,6 +13,7 @@ public class Warrior extends Hero {
         this.health = this.health - (damage - defence); // у воина есть броня
     }
 
+
     @Override
     protected void attackEnemy(Enemy e) {
         do {

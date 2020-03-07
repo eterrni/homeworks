@@ -6,6 +6,7 @@ public class Mage extends Hero {
         super(name, health);
     }
 
+
     @Override
     protected void attackEnemy(Enemy e) {
         do {

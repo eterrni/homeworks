@@ -12,6 +12,7 @@ public abstract class Hero implements Mortal {
         this.health = health;
     }
 
+
     public int getHealth() {
         return health;
     }

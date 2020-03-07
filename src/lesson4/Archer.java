@@ -8,6 +8,7 @@ public class Archer extends Hero {
 
     private int count = 0;
 
+
     @Override
     protected void attackEnemy(Enemy e) {
         do {

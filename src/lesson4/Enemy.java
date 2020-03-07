@@ -15,6 +15,7 @@ public abstract class Enemy implements Mortal {
         reg = health;
     }
 
+
     public String getName() {
         return name;
     }
