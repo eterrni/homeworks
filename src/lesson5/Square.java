@@ -19,7 +19,17 @@ public class Square implements Shape {
         return a * a;
     }
 
+    @Override
+    public boolean compareSquare(Shape shape) {
+        return getSquare() == shape.getSquare();
+    }
+
     protected double getDiagonal() {
         return sqrt(2) * a;
+    }
+
+    @Override
+    public String toString() {
+        return "Квадрат со стороной " + this.a + "\n Площадь квадрата= " + getSquare() + "\nПериметр квадрата=" + getPerimeter();
     }
 }

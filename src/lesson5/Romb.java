@@ -20,7 +20,17 @@ public class Romb implements Shape {
         return a * h;
     }
 
+    @Override
+    public boolean compareSquare(Shape shape) {
+        return getSquare() == shape.getSquare();
+    }
+
     protected double getRadiusOfThInscribedCircle() {
         return getSquare() / (2 * a);
+    }
+
+    @Override
+    public String toString() {
+        return "Ромб со стороной " + this.a + "\n Площадь ромба= " + getSquare() + "\nПериметр ромба=" + getPerimeter();
     }
 }

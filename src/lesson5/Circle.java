@@ -17,6 +17,16 @@ public class Circle implements Shape {
         return PI * a * a;
     }
 
+    @Override
+    public boolean compareSquare(Shape shape) {
+        return getSquare() == shape.getSquare();
+    }
+
+    @Override
+    public String toString() {
+        return "Круг с радиусом " + this.a + "\n Площадь круга= " + getSquare() + "\nПериметр круга=" + getPerimeter();
+    }
+
     static class Sphere {
         private double r;
 
@@ -30,6 +40,10 @@ public class Circle implements Shape {
 
         protected double getSquare() {
             return 4 * PI * r * r;
+        }
+
+        public boolean compareSquare(Shape shape) {
+            return getSquare() == shape.getSquare();
         }
     }
 }

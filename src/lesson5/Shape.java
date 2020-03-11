@@ -6,4 +6,6 @@ public interface Shape {
     double getPerimeter();
 
     double getSquare();
+
+    boolean compareSquare(Shape shape);
 }

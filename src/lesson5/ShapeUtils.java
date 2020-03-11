@@ -1,6 +1,9 @@
 package lesson5;
 
 public class ShapeUtils {
+    private ShapeUtils() {
+
+    }
 
     protected static boolean isRectangle(Shape shape) {
         return shape instanceof Rectangle;
@@ -9,4 +12,5 @@ public class ShapeUtils {
     protected static boolean isTriangle(Shape shape) {
         return shape instanceof Triangle;
     }
+
 }

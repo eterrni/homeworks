@@ -23,7 +23,17 @@ public class Triangle implements Shape {
         return sqrt(p * (p - a) * (p - b) * (p - c));
     }
 
+    @Override
+    public boolean compareSquare(Shape shape) {
+        return getSquare() == shape.getSquare();
+    }
+
     protected double getHeight() {
         return (2 * getSquare()) / a;
+    }
+
+    @Override
+    public String toString() {
+        return "Треугольник со сторонами " + this.a + ", " + this.b + ", " + this.c + "\n Площадь треугольника= " + getSquare() + "\nПериметр треугольника=" + getPerimeter();
     }
 }
