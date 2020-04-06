@@ -17,7 +17,6 @@ public class Calculator {
         System.out.println("Деление типа double : " + testDouble.devideAsBigDouble());
         System.out.println("BigDecimal типа  : " + testDouble.addAsBigDecimal());
     }
-
     int int1;
     int int2;
     double double1;
