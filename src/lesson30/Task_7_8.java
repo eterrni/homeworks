@@ -1,6 +1,7 @@
 package lesson30;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjuster;
 
@@ -17,16 +18,30 @@ public class Task_7_8 implements MyTemporalAdjuster {
     public TemporalAdjuster changeDate1stJanuary() {
         LocalDate today = LocalDate.now();
 
+        if (today.getDayOfYear() <= 183) {
+            return firstJanOfThisYear(today);
+        } else return firstJanOfNextYear(today);
+    }
+
+    public TemporalAdjuster firstJanOfThisYear(LocalDate today) {
+        int todayIsDay = today.getDayOfYear();
+
+
+        return today.minus(todayIsDay - 1, ChronoUnit.DAYS);
+    }
+
+    public TemporalAdjuster firstJanOfNextYear(LocalDate today) {
         int daysInYear = today.lengthOfYear();
         int todayIsDay = today.getDayOfYear();
         int leftDays = daysInYear - todayIsDay;
 
         return today.plus(leftDays + 1, ChronoUnit.DAYS);
+
     }
 
     public static void main(String[] args) {
         Task_7_8 task_7_8 = new Task_7_8();
-        System.out.println(task_7_8.add42days());
+//        System.out.println(task_7_8.add42days());
         System.out.println(task_7_8.changeDate1stJanuary());
     }
 }
