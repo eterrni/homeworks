@@ -4,19 +4,8 @@ import java.util.*;
 
 /*5.Дан класс Person с полями firstName, lastName, age.
 Вывести полное имя самого старшего человека, у которого длина этого имени не превышает 15 символов. */
-public class task_5 {
 
-    public static void main(String[] args) {
-
-        Person person_1 = new Person("Egor", "Rydkov", 18);
-        Person person_2 = new Person("Alexander", "Novikov", 19);
-        Person person_3 = new Person("Aleksei", "Ivanov", 27);
-
-        System.out.println(Person.getOldestPersonName());
-    }
-}
-
-class Person {
+public class Person {
 
     private String firstName;
     private String lastName;
